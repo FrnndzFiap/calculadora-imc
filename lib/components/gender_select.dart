@@ -1,15 +1,34 @@
 import 'package:flutter/material.dart';
 
-class GenderSelect extends StatefulWidget {
-  const GenderSelect({super.key});
+import '../constants.dart';
 
-  @override
-  State<GenderSelect> createState() => _GenderSelectState();
-}
+class GenderSelect extends StatelessWidget {
+  final IconData icon;
+  final String gender;
 
-class _GenderSelectState extends State<GenderSelect> {
+  const GenderSelect({
+  super.key, 
+  required this.icon, 
+  required this.gender
+  });
+
   @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    return Column(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: [
+        Icon(
+          icon,
+          size: 90,
+        ),
+        SizedBox(
+          height: 15,
+        ),
+        Text(
+          gender,
+          style: labelTextStyle,
+        ),
+      ],
+    );
   }
 }

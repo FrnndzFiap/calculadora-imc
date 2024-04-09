@@ -1,4 +1,5 @@
 import 'package:calculadora/components/custom_card.dart';
+import 'package:calculadora/components/gender_select.dart';
 import 'package:calculadora/constants.dart';
 import 'package:flutter/material.dart';
 
@@ -22,25 +23,19 @@ class _CalculadoraPageState extends State<CalculadoraPage> {
           child: Row(children: [
             Expanded(
                 child: CustomCard(
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                   children: [
-                    Icon(
-                      Icons.male,
-                      size: 90,
-                      ),
-                      SizedBox(
-                        height: 15,
-                      ),
-                    Text(
-                      'Masculino',
-                      style: labelTextStyle,),
-                   ], 
-                  ),
+                  child: GenderSelect(
+                    icon: Icons.male, 
+                    gender: 'Masculino'
+                    ),
                 ),
             ), 
             Expanded(
-               child: CustomCard(),
+               child: CustomCard(
+                child: GenderSelect(
+                    icon: Icons.female, 
+                    gender: 'Feminino'
+                    ),
+               ),
                ),
           ]),
         ),
